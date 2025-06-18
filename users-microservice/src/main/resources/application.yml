@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/TeamSprintApp.users
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+jwt:
+  secret: your-very-very-long-secret-key-which-should-be-at-least-32-bytes-long!
+  expiration: 86400000 # 1 день в миллисекундах
