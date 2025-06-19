@@ -1,10 +1,9 @@
 package com.teamsprintapp.usermicroservice.services.authorization;
 
-import com.teamsprintapp.usermicroservice.models.UserEntity;
-import com.teamsprintapp.usermicroservice.enums.Role;
 import com.teamsprintapp.usermicroservice.models.AuthResponse;
 import com.teamsprintapp.usermicroservice.models.LoginRequest;
 import com.teamsprintapp.usermicroservice.models.RegisterRequest;
+import com.teamsprintapp.usermicroservice.models.UserEntity;
 import com.teamsprintapp.usermicroservice.repositories.UserRepository;
 import com.teamsprintapp.usermicroservice.security.JwtTokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;

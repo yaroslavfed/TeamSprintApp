@@ -1,15 +1,15 @@
 package com.teamsprintapp.usermicroservice.controllers;
 
-import com.teamsprintapp.usermicroservice.models.UserEntity;
 import com.teamsprintapp.usermicroservice.models.AuthResponse;
 import com.teamsprintapp.usermicroservice.models.LoginRequest;
 import com.teamsprintapp.usermicroservice.models.RegisterRequest;
+import com.teamsprintapp.usermicroservice.models.UserEntity;
 import com.teamsprintapp.usermicroservice.services.authorization.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -36,20 +36,20 @@ public class AuthController {
 
     @PostMapping("/refresh")
     public ResponseEntity<AuthResponse> refreshToken(@RequestBody String refreshToken) {
-        // тут должна быть логика поиска пользователя по refreshToken
+        // TODO: тут должна быть логика поиска пользователя по refreshToken
         return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
     @PostMapping("/logout")
     public ResponseEntity<Void> logout() {
-        // обнулить refresh токен, отметить как loggedOut, и т.д.
+        // TODO: обнулить refresh токен, отметить как loggedOut, и т.д.
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/me")
     public ResponseEntity<UserEntity> me(Authentication authentication) {
-        String login = authentication.name();
-        UserEntity user = authService.getUserByInfo(login); // реализуй этот метод
+        String login = authentication.getName();
+        UserEntity user = authService.getUserByInfo(login);
         return ResponseEntity.ok(user);
     }
 }
